@@ -138,43 +138,92 @@ p
     color: inherit;
 }
 
-/* Set the main boxes parameters */
-.work-boxes-column
+/* Make the list all line up with an underline and evenly space */
+#my-resume a
 {
-    display: flex;
+    display: inline-block;
+    margin-left: 3rem;
+    text-decoration-line: underline;
+    text-underline-offset: 0.25rem;
+    color: var(--textColor);
+    font-size: 1.5rem;
+}
+
+/* Set the main boxes parameters */
+.boxes-row
+{
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  /* Centers along the main axis determined by flex-direction */
-  justify-content: center;
-  /* Centers along the opposite axis */
-  align-items: center;
-  width: 90%;
-  /* Uses the height of the viewport */
-  height: 30rem;
-  margin: 0 auto;
-  border-style: solid;
-  border-width: 2px;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+/* Set the boxes to be centered */
+.justify-center 
+{
+    justify-content: center;
 }
 
 /* Set the boxes padding alignment, border stule, and width */
-.work-boxes {
-    padding: 1rem;
-    width: 20rem;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px;
-  }
+.box-column 
+{ 
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
 
-  /* Set the cards padding background color and text color */
-  .box-header {
-    padding: 1rem;
-    background: var(--navBackgroundColor);
+/*  */
+.work-boxes
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    outline: 2px dashed var(--nameColor);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Set the cards padding background color and text color */
+.work-boxes .box-header 
+{
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #33393f;
     color: var(--nameColor);
-  }
+    border: 2px solid var(--backgroundColor);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
 
-  /* Set the images width */
-  .work-boxes img {
+.work-boxes:hover,
+.work-boxes:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--nameColor), 0 0 15px var(--nameColor);
+}
+
+.work-boxes {
+    flex-grow: 1;
+}
+
+/* Set the images width */
+.work-boxes img 
+{
     width: 100%;
-  }
+    background-image: linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+      );
+      display: flex;
+      align-items: center;
+}
+
+.work-boxes img:active {
+    user-select: all;
+}
 
 /* Center align the footer */
 footer 
